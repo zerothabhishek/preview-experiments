@@ -1,0 +1,8 @@
+blog/.bundle
+blog/db/*.sqlite3
+blog/log/*.log
+blog/tmp/**/*
+old_app/.bundle
+old_app/db/*.sqlite3
+old_app/log/*.log
+old_app/tmp/**/*

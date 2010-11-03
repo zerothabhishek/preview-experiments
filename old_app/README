@@ -1,0 +1,25 @@
+#preview-experiments
+
+- starting with the posts application as shown in rails guides.
+- 'preview' available only for edit action
+
+- trying the serialization route. 
+instead of saving the object in preview request, save the changed object to the database,
+as a field in a more general PreviewObjects table. In preview show action, load this saved 
+object and construct the object from this for display
+
+- tried using yaml serialization for the above implementation, but failed because of
+the class load problem. 
+    http://dev.rubyonrails.org/ticket/8933
+    http://blog.sbf5.com/?p=39
+    http://weblog.bitlasoft.com/2010/05/ruby-on-rails-serializing-and-deserializing-ruby-objects/
+    http://itsignals.cascadia.com.au/?p=10
+    http://dev.rubyonrails.org/ticket/7537
+    http://www.skorks.com/2010/04/serializing-and-deserializing-objects-with-ruby/
+	http://www.simonecarletti.com/blog/2010/04/inside-ruby-on-rails-serializing-ruby-objects-with-json/
+Perhaps there is a bug in rails due to which YAML deserialization has problems.
+
+- tried another alternative - to use binary serialization via Marshall::dump/load.
+problem here is that sqlite is unable to store the data as binary data makes invalid INSERT query.
+
+- Instead of saving the preview-objects in database, we can consider keeping them around in the memory only.

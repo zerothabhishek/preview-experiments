@@ -1,0 +1,2746 @@
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 26 13:58:59 +0530 2010
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 26 13:59:34 +0530 2010
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 26 13:59:35 +0530 2010
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 26 13:59:54 +0530 2010
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (34.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.6ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreatePosts (20101026083019)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "content" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101026083019')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("posts")
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Oct 26 14:00:46 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 95ms (Views: 13.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Tue Oct 26 14:00:47 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (148.4ms)
+Rendered posts/new.html.erb within layouts/application (155.8ms)
+Completed 200 OK in 173ms (Views: 163.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Tue Oct 26 14:01:15 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Create Post", "post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n."}, "authenticity_token"=>"/JxhqHrvC0K/+vZz65daQ/bZ206TPjR/6An35jmMHD4=", "utf8"=>"✓"}
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "name", "title", "updated_at") VALUES ('lorem....
+
+.', '2010-10-26 08:31:15.516783', 'f1', 'first post', '2010-10-26 08:31:15.516783')[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 59ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 14:01:15 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 41ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Oct 26 14:01:17 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+Rendered posts/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 114ms (Views: 100.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Tue Oct 26 14:02:29 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (14.8ms)
+Rendered posts/new.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 38ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:07:10 +0530 2010
+
+SyntaxError (/Users/abhishek/xc/preview/config/routes.rb:3: syntax error, unexpected ':', expecting kEND
+    get 'preview' :on => :member
+                   ^):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:07:26 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+ERROR: compiling _app_views_posts_edit_html_erb___1805072978_2181318940_0 RAISED compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+... 'Preview', preview_path @post );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_posts_edit_html_erb___1805072978_2181318940_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "posts/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Editing post</h1>
+
+');@output_buffer.append= ( render 'form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Preview', preview_path @post );@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Show', @post );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', posts_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/abhishek/xc/preview/app/views/posts/edit.html.erb:11:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:435:in `_run__84203013__process_action__1992409046__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/edit.html.erb within layouts/application (22.6ms)
+Completed   in 44ms
+
+ActionView::Template::Error (compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+... 'Preview', preview_path @post );@output_buffer.safe_concat(...
+                              ^):
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Preview', preview_path @post %>
+    6: <%= link_to 'Show', @post %> |
+    7: <%= link_to 'Back', posts_path %>
+  app/views/posts/edit.html.erb:11:in `compile'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.6ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:07:46 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_posts_edit_html_erb___1805072978_2183103160_0 RAISED compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...view', post_preview_path @post );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_posts_edit_html_erb___1805072978_2183103160_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "posts/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Editing post</h1>
+
+');@output_buffer.append= ( render 'form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Preview', post_preview_path @post );@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Show', @post );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', posts_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/abhishek/xc/preview/app/views/posts/edit.html.erb:11:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:435:in `_run__84203013__process_action__1992409046__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/edit.html.erb within layouts/application (1.3ms)
+Completed   in 22ms
+
+ActionView::Template::Error (compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...view', post_preview_path @post );@output_buffer.safe_concat(...
+                              ^):
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Preview', post_preview_path @post %>
+    6: <%= link_to 'Show', @post %> |
+    7: <%= link_to 'Back', posts_path %>
+  app/views/posts/edit.html.erb:11:in `compile'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:09:03 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+ERROR: compiling _app_views_posts_edit_html_erb___1805072978_2181976720_0 RAISED compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...view', preview_post_path @post );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_posts_edit_html_erb___1805072978_2181976720_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "posts/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Editing post</h1>
+
+');@output_buffer.append= ( render 'form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Preview', preview_post_path @post );@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Show', @post );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', posts_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/abhishek/xc/preview/app/views/posts/edit.html.erb:11:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:435:in `_run__84203013__process_action__1992409046__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed   in 22ms
+
+ActionView::Template::Error (compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...view', preview_post_path @post );@output_buffer.safe_concat(...
+                              ^):
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Preview', preview_post_path @post %>
+    6: <%= link_to 'Show', @post %> |
+    7: <%= link_to 'Back', posts_path %>
+  app/views/posts/edit.html.erb:11:in `compile'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (28.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:09:58 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (15.9ms)
+Rendered posts/edit.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 120ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:10:18 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+ERROR: compiling _app_views_posts_edit_html_erb___1805072978_2182623420_0 RAISED compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...eview', preview_post_url @post );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_posts_edit_html_erb___1805072978_2182623420_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "posts/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Editing post</h1>
+
+');@output_buffer.append= ( render 'form' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Preview', preview_post_url @post );@output_buffer.safe_concat('
+');@output_buffer.append= ( link_to 'Show', @post );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', posts_path );@output_buffer.safe_concat('
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/abhishek/xc/preview/app/views/posts/edit.html.erb:11:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:435:in `_run__84203013__process_action__1992409046__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed   in 23ms
+
+ActionView::Template::Error (compile error
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:5: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+...eview', preview_post_url @post );@output_buffer.safe_concat(...
+                              ^):
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Preview', preview_post_url @post %>
+    6: <%= link_to 'Show', @post %> |
+    7: <%= link_to 'Back', posts_path %>
+  app/views/posts/edit.html.erb:11:in `compile'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.8ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 14:10:42 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:11:30 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (15.4ms)
+Rendered posts/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 122ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 14:11:35 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 14:11:42 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:15:35 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+ERROR: compiling _app_views_posts__form_html_erb___1314297676_2181977560_1065150 RAISED compile error
+/Users/abhishek/xc/preview/app/views/posts/_form.html.erb:28: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...r.append= ( f.submit, :name => 'Preview' );@output_buffer.sa...
+                              ^
+Function body:           def _app_views_posts__form_html_erb___1314297676_2181977560_1065150(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "posts/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@post) do |f| @output_buffer.safe_concat('
+');   if @post.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@post.errors.count, "error") );@output_buffer.safe_concat(' prohibited this post from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @post.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :title );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :content );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :content );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.submit, :name => 'Preview' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/abhishek/xc/preview/app/views/posts/_form.html.erb:34:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:294:in `render_partial'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:223:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:221:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:334:in `_render_partial'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:31:in `render'
+/Users/abhishek/xc/preview/app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb___1805072978_2181989720_0'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:435:in `_run__84203013__process_action__1992409046__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered posts/_form.html.erb (2.6ms)
+Rendered posts/edit.html.erb within layouts/application (5.2ms)
+Completed   in 26ms
+
+ActionView::Template::Error (compile error
+/Users/abhishek/xc/preview/app/views/posts/_form.html.erb:28: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...r.append= ( f.submit, :name => 'Preview' );@output_buffer.sa...
+                              ^):
+    25:   </div>
+    26:   <div class="actions">
+    27:     <%= f.submit %>
+    28: 	<%= f.submit, :name => 'Preview' %>
+    29:   </div>
+    30: <% end %>
+  app/views/posts/_form.html.erb:34:in `compile'
+  app/views/posts/edit.html.erb:3:in `_app_views_posts_edit_html_erb___1805072978_2181989720_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (96.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:16:53 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (15.3ms)
+Rendered posts/edit.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 45ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at Tue Oct 26 14:52:24 +0530 2010
+
+ActionController::RoutingError (No route matches "/events"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:53:01 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (81.0ms)
+Rendered posts/edit.html.erb within layouts/application (89.8ms)
+Completed 200 OK in 183ms (Views: 97.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 26 14:55:20 +0530 2010
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Oct 26 14:55:25 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+Rendered posts/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 87ms (Views: 32.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Tue Oct 26 14:55:27 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (15.3ms)
+Rendered posts/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 39ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Oct 26 14:55:29 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
+Rendered posts/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 37ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:55:31 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (16.0ms)
+Rendered posts/edit.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 48ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:56:02 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (15.6ms)
+Rendered posts/edit.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 48ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:56:51 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (21.0ms)
+Rendered posts/edit.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 54ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 14:56:56 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n."}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+got preview
+Redirected to http://localhost:4000/posts/1
+Completed 302 Found in 60ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 14:56:56 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (107.7ms)
+Completed 200 OK in 133ms (Views: 114.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 14:58:11 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (16.3ms)
+Rendered posts/edit.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 56ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 14:58:15 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"commit"=>"Update Post", "post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n."}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:4000/posts/1
+Completed 302 Found in 111ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 14:58:15 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 42ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 15:17:32 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (13.9ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (23.8ms)
+Rendered posts/edit.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 156ms (Views: 50.5ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:17:38 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n."}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 56ms
+
+ActiveRecord::StatementInvalid (Could not find table 'preview_objekts'):
+  app/controllers/posts_controller.rb:64:in `update'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (34.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.2ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreatePosts (20101026083019)
+Migrating to CreatePreviewObjekts (20101026093647)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreatePosts (20101026083019)
+Migrating to CreatePreviewObjekts (20101026093647)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" text, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (20.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101026093647')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("posts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("preview_objekts")[0m
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 15:19:40 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (28.7ms)
+Rendered posts/edit.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 77ms (Views: 47.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:19:42 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n."}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 09:49:42.950951', 1, 'Post', 1, '2010-10-26 09:49:42.950951')
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 155ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 15:19:43 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (33.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.2ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.3ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" LIMIT 1[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "preview_objekts" SET "objekt" = 1, "updated_at" = '2010-10-26 09:54:22.723872' WHERE ("preview_objekts"."id" = 1)[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.2ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "preview_objekts" SET "objekt" = '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 2010-10-26 08:31:15.516783
+ title: first post
+ updated_at: 2010-10-26 08:31:15.516783
+ id: 1
+ content: |-
+ lorem....
+ 
+ .
+attributes_cache: {}
+
+changed_attributes: {}
+
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', "updated_at" = '2010-10-26 09:55:35.398343' WHERE ("preview_objekts"."id" = 1)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" LIMIT 1
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:26:37 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n.\r\n.\r\n.\r\n\r\n\r\n!"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 09:56:38.025479', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 2010-10-26 08:31:15.516783
+ title: first post
+ updated_at: 2010-10-26 08:31:15.516783
+ id: 1
+ content: |-
+ lorem....
+ 
+ .
+attributes_cache: {}
+
+changed_attributes: {}
+
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 09:56:38.025479')[0m
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 80ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 15:26:38 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 1.5ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 1) LIMIT 1
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:43:21 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n.\r\n.\r\n.\r\n\r\n\r\nipsum"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 10:13:21.921517', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 2010-10-26 08:31:15.516783
+ title: first post
+ updated_at: 2010-10-26 08:31:15.516783
+ id: 1
+ content: |-
+ lorem....
+ 
+ .
+attributes_cache: {}
+
+changed_attributes: {}
+
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 10:13:21.921517')
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 172ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 15:43:21 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 12ms
+
+ArgumentError (Unknown key(s): idee):
+  app/controllers/posts_controller.rb:94:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.6ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:57:16 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"commit"=>"Update Post", "post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n.\r\n.\r\n.\r\nipsum"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "posts" SET "content" = 'lorem....
+
+.
+.
+.
+ipsum', "updated_at" = '2010-10-26 10:27:16.981368' WHERE ("posts"."id" = 1)
+Redirected to http://localhost:4000/posts/1
+Completed 302 Found in 54ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 15:57:17 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 73ms (Views: 55.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 15:57:27 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem....\r\n\r\n.\r\n.\r\n.\r\nipsum"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 10:27:27.876789', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 2010-10-26 08:31:15.516783
+ title: first post
+ updated_at: 2010-10-26 10:27:16.981368
+ id: 1
+ content: |-
+ lorem....
+ 
+ .
+ .
+ .
+ ipsum
+attributes_cache: {}
+
+changed_attributes: {}
+
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 10:27:27.876789')
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 56ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 15:57:27 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.7ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1')[0m
+Completed   in 17ms
+
+NoMethodError (undefined method `objekt' for #<ActiveRecord::Relation:0x1042c1488>):
+  app/controllers/posts_controller.rb:94:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+  [1m[36mPreviewObjekt Load (47.2ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1')[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1')
+  [1m[36mPreviewObjekt Load (0.7ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY preview_objekts.id DESC LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 16:02:44 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"only preview"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 10:32:44.143218', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 2010-10-26 08:31:15.516783
+ title: first post
+ updated_at: 2010-10-26 10:27:16.981368
+ id: 1
+ content: |-
+ lorem....
+ 
+ .
+ .
+ .
+ ipsum
+attributes_cache: {}
+
+changed_attributes: {}
+
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 10:32:44.143218')
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 90ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 16:02:44 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (53.9ms)
+Completed   in 140ms
+
+ActionView::Template::Error (undefined method `name' for #<YAML::Object:0x10442a180>):
+    2: 
+    3: <p>
+    4:   <b>Name:</b>
+    5:   <%= @post.name %>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/posts/show.html.erb:5:in `_app_views_posts_show_html_erb__2061338178_2183209900_0'
+  app/controllers/posts_controller.rb:96:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 16:08:02 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"commit"=>"Update Post", "post"=>{"name"=>"f1", "title"=>"first post", "content"=>"only preview"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (17.9ms)[0m  [1mUPDATE "posts" SET "content" = 'only preview', "updated_at" = '2010-10-26 10:38:02.431745' WHERE ("posts"."id" = 1)[0m
+Redirected to http://localhost:4000/posts/1
+Completed 302 Found in 48ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 16:08:02 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 42ms (Views: 28.0ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 16:09:03 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (15.3ms)
+Rendered posts/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 46ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 16:09:14 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"commit"=>"Update Post", "post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "posts" SET "content" = 'lorem ipsup', "updated_at" = '2010-10-26 10:39:14.383526' WHERE ("posts"."id" = 1)[0m
+Redirected to http://localhost:4000/posts/1
+Completed 302 Found in 32ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 16:09:14 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 42ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 16:09:16 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Rendered posts/_form.html.erb (15.4ms)
+Rendered posts/edit.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 45ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 16:09:24 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"only preview"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 10:39:24.565392', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 
+ title: first post
+ updated_at: 
+ content: only preview
+attributes_cache: {}
+
+changed_attributes: 
+ name: 
+ title: 
+ content: 
+destroyed: false
+marked_for_destruction: false
+new_record: true
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 10:39:24.565392')
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 133ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 16:09:24 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+Completed   in 35ms
+
+NoMethodError (undefined method `ivars' for #<String:0x1043bb2a8>):
+  app/controllers/posts_controller.rb:96:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+
+
+Started GET "/posts/1" for 127.0.0.1 at Tue Oct 26 16:12:21 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 58ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 16:12:25 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"only preview"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (22.0ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 10:42:26.056191', 1, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: f1
+ created_at: 
+ title: first post
+ updated_at: 
+ content: only preview
+attributes_cache: {}
+
+changed_attributes: 
+ name: 
+ title: 
+ content: 
+destroyed: false
+marked_for_destruction: false
+new_record: true
+previously_changed: {}
+
+readonly: false
+', '2010-10-26 10:42:26.056191')[0m
+Redirected to http://localhost:4000/posts/1/preview
+Completed 302 Found in 77ms
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 16:12:26 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 16:13:19 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+#<PreviewObjekt:0x104242598>
+Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 16:58:30 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+post_pre: #<PreviewObjekt:0x10417c4d8>
+Completed   in 21ms
+
+TypeError (instance of IO needed):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.0ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:00:49 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+post_pre: #<PreviewObjekt:0x1044be218>
+Completed   in 21ms
+
+TypeError (instance of IO needed):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:00:52 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+post_pre: #<PreviewObjekt:0x1042f2fd8>
+Completed   in 20ms
+
+TypeError (instance of IO needed):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:05:40 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+post_pre: #<PreviewObjekt:0x104123a68>, PreviewObjekt
+Completed   in 20ms
+
+TypeError (instance of IO needed):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.0ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:06:20 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+post_pre: #<PreviewObjekt:0x1044f37b0>, PreviewObjekt
+post_obj: , NilClass
+Rendered text template (0.0ms)
+Completed 200 OK in 100ms (Views: 1.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:06:42 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+post_pre: #<PreviewObjekt:0x104404840>, PreviewObjekt
+post_obj: #<YAML::Object:0x1043bb000>, Post
+Rendered text template (0.0ms)
+Completed 200 OK in 22ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:17:19 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+post_pre: #<PreviewObjekt:0x104115620>, PreviewObjekt
+Completed   in 69ms
+
+ActiveRecord::SerializationTypeMismatch (objekt was supposed to be a ActiveRecord::Base, but was a Post):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.8ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:18:27 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+post_pre: #<PreviewObjekt:0x104473178>, PreviewObjekt
+Completed   in 34ms
+
+ActiveRecord::SerializationTypeMismatch (objekt was supposed to be a Post, but was a String):
+  app/controllers/posts_controller.rb:100:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.8ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:19:13 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreviewObjekt Load (0.6ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1
+post_pre: #<PreviewObjekt:0x1042a0d50>, PreviewObjekt
+post_obj: #<YAML::Object:0x10427c6f8>, Post
+Rendered text template (0.0ms)
+Completed 200 OK in 48ms (Views: 27.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1/preview" for 127.0.0.1 at Tue Oct 26 17:28:12 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='1') ORDER BY created_at DESC LIMIT 1[0m
+Completed   in 20ms
+
+TypeError (incompatible marshal file format (can't be read)
+	format version 4.8 required; 45.45 given):
+  app/controllers/posts_controller.rb:106:in `load'
+  app/controllers/posts_controller.rb:106:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Tue Oct 26 17:28:21 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (19.5ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (92.3ms)
+Rendered posts/edit.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 237ms (Views: 202.6ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Tue Oct 26 17:28:28 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"for preview"}, "authenticity_token"=>"+9UKhcN/VIfq+0Z5NmRIktEbWgvaHpGdfrURiGwi/6w=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 11:58:28.341869', 1, 'Post', 'o:	Post:@readonlyF:@previously_changed{ :@new_recordT:@marked_for_destructionF:@attributes_cache{ :@attributes{
+"	name"f1"created_at0"
+title"first post"updated_at0"content"for preview:@destroyedF:@changed_attributes{"	name0"
+title0"content0', '2010-10-26 11:58:28.341869')
+SQLite3::SQLException: unrecognized token: "'o:	Post:@readonlyF:@previously_changed{": INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 11:58:28.341869', 1, 'Post', 'o:	Post:@readonlyF:@previously_changed{ :@new_recordT:@marked_for_destructionF:@attributes_cache{ :@attributes{
+"	name"f1"created_at0"
+title"first post"updated_at0"content"for preview:@destroyedF:@changed_attributes{"	name0"
+title0"content0', '2010-10-26 11:58:28.341869')
+Completed   in 113ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: unrecognized token: "'o:	Post:@readonlyF:@previously_changed{": INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 11:58:28.341869', 1, 'Post', 'o:	Post:@readonlyF:@previously_changed{ :@new_recordT:@marked_for_destructionF:@attributes_cache{ :@attributes{
+"	name"f1"created_at0"
+title"first post"updated_at0"content"for preview:@destroyedF:@changed_attributes{"	name0"
+title0"content0', '2010-10-26 11:58:28.341869')):
+  app/controllers/posts_controller.rb:68:in `update'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (21.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.1ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (26.7ms)[0m  SELECT "posts".* FROM "posts" LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 12:01:09.043461', 1, 'Post', 'o:	Post:@marked_for_destructionF:@attributes_cache{ :@destroyedF:@changed_attributes{ :@readonlyF:@attributes{"	name"f1"created_at"2010-10-26 08:31:15.516783"
+title"first post"updated_at"2010-10-26 10:39:14.383526"idi"content"lorem ipsup:@previously_changed{ :@new_recordF', '2010-10-26 12:01:09.043461')
+SQLite3::SQLException: unrecognized token: "'o:	Post:@marked_for_destructionF:@attributes_cache{": INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-26 12:01:09.043461', 1, 'Post', 'o:	Post:@marked_for_destructionF:@attributes_cache{ :@destroyedF:@changed_attributes{ :@readonlyF:@attributes{"	name"f1"created_at"2010-10-26 08:31:15.516783"
+title"first post"updated_at"2010-10-26 10:39:14.383526"idi"content"lorem ipsup:@previously_changed{ :@new_recordF', '2010-10-26 12:01:09.043461')
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (14.5ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" ORDER BY preview_objekts.id DESC LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.8ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.9ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+  [1m[35mPreviewObjekt Load (0.9ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.9ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+  [1m[35mPreviewObjekt Load (0.9ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.9ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+  [1m[35mPreviewObjekt Load (0.9ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.9ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 1) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 2) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 3) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 4) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 5) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 6) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 7) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.3ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 8) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 9) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.4ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" ORDER BY preview_objekts.id DESC LIMIT 1[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (14.9ms)[0m  INSERT INTO "posts" ("content", "created_at", "name", "title", "updated_at") VALUES ('lorem ipsume done done done', '2010-10-30 20:23:36.080925', 'post name', NULL, '2010-10-30 20:23:36.080925')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 20:24:43.796919', 2, 'Post', '--- !ruby/object:Post 
+attributes: 
+ name: post name
+ created_at: &id001 2010-10-30 20:23:36.080925 Z
+ title: changed title
+ updated_at: *id001
+ id: 2
+ content: changed content
+attributes_cache: 
+ created_at: *id001
+ updated_at: *id001
+changed_attributes: 
+ title: 
+ content: lorem ipsume done done done
+destroyed: false
+errors: !omap []
+
+marked_for_destruction: false
+new_record: false
+previously_changed: !map:ActiveSupport::HashWithIndifferentAccess 
+ name: 
+ - 
+ - post name
+ created_at: 
+ - 
+ - *id001
+ updated_at: 
+ - 
+ - *id001
+ id: 
+ - 
+ - 2
+ content: 
+ - 
+ - lorem ipsume done done done
+readonly: false
+validation_context: 
+', '2010-10-30 20:24:43.796919')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 20:24:59.555243', 2, 'Post', 2, '2010-10-30 20:24:59.555243')
+  [1m[36mPreviewObjekt Load (0.5ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 8) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 31 02:01:51 +0530 2010
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 02:02:03 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (71.8ms)
+Rendered posts/new.html.erb within layouts/application (98.6ms)
+Completed 200 OK in 137ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 02:03:11 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Create Post", "post"=>{"name"=>"some-post-name", "title"=>"here is the original post", "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend."}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("content", "created_at", "name", "title", "updated_at") VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.', '2010-10-30 20:33:11.603932', 'some-post-name', 'here is the original post', '2010-10-30 20:33:11.603932')
+Redirected to http://localhost:4000/posts/3
+Completed 302 Found in 80ms
+
+
+Started GET "/posts/3" for 127.0.0.1 at Sun Oct 31 02:03:11 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 133ms (Views: 117.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at Sun Oct 31 02:03:15 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1
+Rendered posts/_form.html.erb (16.2ms)
+Rendered posts/edit.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 59ms (Views: 44.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/3" for 127.0.0.1 at Sun Oct 31 02:03:31 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"some-post-name", "title"=>"here is the original post", "content"=>"changed-post"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "id"=>"3", "preview"=>"Preview"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 20:33:31.732629', 3, 'Post', NULL, '2010-10-30 20:33:31.732629')
+Redirected to http://localhost:4000/posts/3/preview
+Completed 302 Found in 127ms
+
+
+Started GET "/posts/3/preview" for 127.0.0.1 at Sun Oct 31 02:03:31 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPreviewObjekt Load (0.6ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='3') ORDER BY created_at DESC LIMIT 1[0m
+Completed   in 20ms
+
+TypeError (instance of IO needed):
+  app/controllers/posts_controller.rb:107:in `load'
+  app/controllers/posts_controller.rb:107:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.1ms)
+
+
+Started GET "/posts/3/preview" for 127.0.0.1 at Sun Oct 31 02:05:26 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPreviewObjekt Load (0.5ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee ='3') ORDER BY created_at DESC LIMIT 1
+post_pre: , NilClass
+Rendered text template (0.1ms)
+Completed 200 OK in 38ms (Views: 18.3ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee =3) ORDER BY created_at DESC LIMIT 1
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 20:38:54.822880', NULL, NULL, 3, '2010-10-30 20:38:54.822880')
+  [1m[36mPreviewObjekt Load (0.5ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee =3) ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" ORDER BY preview_objekts.id DESC LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 20:41:16.985382', NULL, NULL, '--- !ruby/object:Post 
+attributes: 
+ name: some-post-name
+ created_at: 2010-10-30 20:33:11.603932
+ title: changed title
+ updated_at: 2010-10-30 20:33:11.603932
+ id: 3
+ content: changed content
+attributes_cache: {}
+
+changed_attributes: 
+ title: here is the original post
+ content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.
+destroyed: false
+marked_for_destruction: false
+new_record: false
+previously_changed: {}
+
+readonly: false
+', '2010-10-30 20:41:16.985382')[0m
+  [1m[35mPreviewObjekt Load (0.5ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 12) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreatePosts (20101026083019)
+Migrating to CreatePreviewObjekts (20101026093647)
+Migrating to ChangePreviewObjecktColumnType (20101030205603)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" text, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.5ms)[0m  [1mDROP TABLE "preview_objekts"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" blob, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_preview_objekts")[0m
+  [1m[35mSQL (0.4ms)[0m  DROP TABLE "altered_preview_objekts"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101030205603')[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("posts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 21:06:23.082019', NULL, NULL, 'o:	Post:@marked_for_destructionF:@attributes_cache{%00:@destroyedF:@changed_attributes{"
+title"here is the original post"content"�Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.:@readonlyF:@attributes{"	name"some-post-name"created_at"2010-10-30 20:33:11.603932"
+title"changed post"updated_at"2010-10-30 20:33:11.603932"idi"content"�changed ..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.:@previously_changed{%00:@new_recordF', '2010-10-30 21:06:23.082019')[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 13) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "preview_objekts" SET "idee" = 3, "klass" = 'Post', "objekt" = 'o:	Post:@marked_for_destructionF:@attributes_cache{%00:@destroyedF:@changed_attributes{"
+title"here is the original post"content"�Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.:@readonlyF:@attributes{"	name"some-post-name"created_at"2010-10-30 20:33:11.603932"
+title"changed post"updated_at"2010-10-30 20:33:11.603932"idi"content"�changed ..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend.:@previously_changed{%00:@new_recordF', "updated_at" = '2010-10-30 21:07:29.034591' WHERE ("preview_objekts"."id" = 13)[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE (idee =3) ORDER BY preview_objekts.id DESC LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("posts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("preview_objekts")[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" blob, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "preview_objekts"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" text, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_preview_objekts")[0m
+  [1m[35mSQL (0.4ms)[0m  DROP TABLE "altered_preview_objekts"
+  [1m[36mSQL (1.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20101030205603'[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("posts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "altered_preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" text, "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "preview_objekts"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "preview_objekts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "objekt" blob(4096), "klass" varchar(255), "idee" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_preview_objekts")[0m
+  [1m[35mSQL (0.4ms)[0m  DROP TABLE "altered_preview_objekts"
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20101030205603')[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("posts")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("preview_objekts")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (1.0ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 2)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 3)[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 4)
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 5)[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 6)
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 7)[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 8)
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 9)[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 10)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 11)[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 12)
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "preview_objekts" WHERE ("preview_objekts"."id" = 13)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) AS count_id FROM "preview_objekts"
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "posts" SET "content" = 'Serializes obj and all descendent objects. If anIO is specified, the serialized data will be written to it, otherwise the data will be returned as a String.', "updated_at" = '2010-10-30 21:25:08.132054' WHERE ("posts"."id" = 3)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-30 21:29:10.213009', 3, NULL, 'o:	Post:@errorsIC:ActiveModel::Errors{%00:
+@keys[%00:
+@base@%00:@marked_for_destructionF:@attributes_cache{"updated_atU: ActiveSupport::TimeWithZone[u:	Timeէ���d"UTC@:@destroyedF:@changed_attributes{"
+title"here is the original post"content"�Serializes obj and all descendent objects. If anIO is specified, the serialized data will be written to it, otherwise the data will be returned as a String.:@readonlyF:@attributes{"	name"some-post-name"created_at"2010-10-30 20:33:11.603932"
+title"''changed :here is the original post"updated_at@"idi"content"�changed :Serializes obj and all descendent objects. If anIO is specified, the serialized data will be written to it, otherwise the data will be returned as a String.:@previously_changedC:-ActiveSupport::HashWithIndifferentAccess{"updated_at[U;[u;ԧ�7��@@#@
+@["�Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus mi, tristique ac tristique quis, eleifend at leo. Etiam sodales ullamcorper gravida. Curabitur quis euismod tellus. Curabitur nec sem augue, a venenatis nibh. Ut quis elit eros, in ultrices lectus. Mauris lorem nibh, tincidunt id sagittis ornare, commodo et ligula. Maecenas venenatis elementum sollicitudin. Nulla at arcu sed massa feugiat euismod. Fusce egestas lacus ut mi elementum consectetur. Praesent sit amet orci nulla. Curabitur facilisis tellus eget magna pretium lacinia. In sem enim, aliquet et ullamcorper lobortis, luctus ac lorem. Nulla malesuada condimentum felis, sed semper sem condimentum id. Integer elementum gravida vestibulum. Aliquam erat volutpat. Maecenas nec magna erat, nec laoreet justo. Nullam ultricies, nisl et semper ultricies, enim turpis congue mi, ac suscipit mi odio in mi. Duis faucibus condimentum diam quis eleifend."�Serializes obj and all descendent objects. If anIO is specified, the serialized data will be written to it, otherwise the data will be returned as a String.:@new_recordF:@validation_context0', '2010-10-30 21:29:10.213009')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 3) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."id" = 13) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.3ms)[0m  [1mSELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."id" = 1) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."id" = 2) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.2ms)[0m  [1mSELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."id" = 3) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.4ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 3) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.3ms)[0m  [1mSELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 3) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.2ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 2148401480) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.2ms)[0m  [1mSELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 1) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.3ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."idee" = 1) LIMIT 1
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 14:34:37 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (59.0ms)
+Rendered posts/new.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 107ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 14:35:31 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"post###", "title"=>"lets-go", "content"=>"hello there\r\n\r\nthsi is it."}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("content", "created_at", "name", "title", "updated_at") VALUES ('hello there
+
+thsi is it.', '2010-10-31 09:05:31.173658', 'post###', 'lets-go', '2010-10-31 09:05:31.173658')
+Redirected to http://localhost:4000/posts/4
+Completed 302 Found in 120ms
+
+
+Started GET "/posts/4" for 127.0.0.1 at Sun Oct 31 14:35:31 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 37ms (Views: 22.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at Sun Oct 31 14:36:03 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1
+Rendered posts/_form.html.erb (16.4ms)
+Rendered posts/edit.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 146ms (Views: 59.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/4" for 127.0.0.1 at Sun Oct 31 14:36:11 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"post###", "title"=>"lets-go", "content"=>"changed\r\nhello there\r\n\r\nthsi is it."}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "id"=>"4", "preview"=>"Preview"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.2ms)[0m  SELECT "preview_objekts"."id" FROM "preview_objekts" WHERE ("preview_objekts"."id" = 4) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-31 09:06:11.560953', NULL, NULL, 'o:	Post:@readonlyF:@previously_changed{%00:@new_recordT:@marked_for_destructionF:@attributes_cache{%00:@attributes{
+"	name"post###"created_at0"
+title"lets-go"updated_at0"content"(changed
+hello there
+
+thsi is it.:@destroyedF:@changed_attributes{"	name0"
+title0"content0', '2010-10-31 09:06:11.560953')[0m
+Redirected to http://localhost:4000/posts/4/preview
+Completed 302 Found in 53ms
+
+
+Started GET "/posts/4/preview" for 127.0.0.1 at Sun Oct 31 14:36:11 +0530 2010
+  Processing by PostsController#preview as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPreviewObjekt Load (0.1ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 4) LIMIT 1
+Completed   in 14ms
+
+ActiveRecord::RecordNotFound (Couldn't find PreviewObjekt with ID=4):
+  app/controllers/posts_controller.rb:99:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.5ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1
+  [1m[36mPreviewObjekt Load (0.2ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts" WHERE ("preview_objekts"."id" = 4) LIMIT 1[0m
+  [1m[35mPreviewObjekt Load (0.5ms)[0m  SELECT "preview_objekts".* FROM "preview_objekts"
+  [1m[36mPreviewObjekt Load (0.5ms)[0m  [1mSELECT "preview_objekts".* FROM "preview_objekts"[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "preview_objekts" ("created_at", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-31 09:19:10.063954', NULL, NULL, 'hello', '2010-10-31 09:19:10.063954')
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 34) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 34) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "preview_objekts" ("created_at", "id", "idee", "klass", "objekt", "updated_at") VALUES ('2010-10-31 09:24:44.243797', 36, NULL, NULL, 'hello', '2010-10-31 09:24:44.243797')[0m
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 31 20:05:25 +0530 2010
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 20:05:33 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (14.2ms)
+Rendered posts/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 55ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:05:52 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"c"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Completed   in 19ms
+
+NameError (undefined local variable or method `post_pre' for #<PostsController:0x1041bb9d0>):
+  app/controllers/posts_controller.rb:48:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 20:07:03 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (13.8ms)
+Rendered posts/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 36ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:07:10 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"c"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Completed   in 19ms
+
+NameError (undefined local variable or method `post_pre' for #<PostsController:0x104117588>):
+  app/controllers/posts_controller.rb:48:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:07:41 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"c"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Completed   in 18ms
+
+NameError (undefined local variable or method `post_pre' for #<PostsController:0x104385590>):
+  app/controllers/posts_controller.rb:48:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 20:09:05 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (13.9ms)
+Rendered posts/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 37ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:09:09 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"cd"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (159.7ms)
+Completed   in 193ms
+
+ActionView::Template::Error (No route matches {:controller=>"posts", :action=>"edit", :id=>#<Post id: nil, name: "a", title: "b", content: "cd", created_at: nil, updated_at: nil>}):
+    16: </p>
+    17: 
+    18: 
+    19: <%= link_to 'Edit', edit_post_path(@post) %> |
+    20: <%= link_to 'Back', posts_path %>
+  app/views/posts/show.html.erb:19:in `_app_views_posts_show_html_erb__2061338178_2183146460_0'
+  app/controllers/posts_controller.rb:48:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 20:10:26 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (13.9ms)
+Rendered posts/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 37ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:10:28 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"cd"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (4.6ms)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("content", "created_at", "name", "title", "updated_at") VALUES ('cd', '2010-10-31 14:40:28.685644', 'a', 'b', '2010-10-31 14:40:28.685644')[0m
+Redirected to 
+Completed   in 40ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/posts_controller.rb:57:in `create'
+  app/controllers/posts_controller.rb:55:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (21.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sun Oct 31 20:10:52 +0530 2010
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (14.5ms)
+Rendered posts/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sun Oct 31 20:10:55 +0530 2010
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"name"=>"a", "title"=>"b", "content"=>"cde"}, "authenticity_token"=>"+OVGbUwkWYsm8CoferY6nmyZLPVGX/Zyge/mk7Bd+9s=", "utf8"=>"✓", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 28ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Nov 02 23:42:20 +0530 2010
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Nov 02 23:42:26 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (20.1ms)[0m  SELECT "posts".* FROM "posts"
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+Rendered posts/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 190ms (Views: 39.1ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at Tue Nov 02 23:49:59 +0530 2010
+  Processing by PostsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts"
+Rendered posts/index.html.erb within layouts/application (495314.5ms)
+Completed 200 OK in 495399ms (Views: 495323.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:01:18 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (9.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (54.3ms)
+Rendered posts/edit.html.erb within layouts/application (76.1ms)
+Completed 200 OK in 305ms (Views: 132.5ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:01:27 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup..."}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (27.6ms)
+Completed   in 164ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"posts", :id=>#<Post id: nil, name: "f1", title: "first post", content: "lorem ipsup...", created_at: nil, updated_at: nil>}):
+    16: </p>
+    17: 
+    18: 
+    19: <%= link_to 'Edit', edit_post_path(@post) %> |
+    20: <%= link_to 'Back', posts_path %>
+  app/views/posts/show.html.erb:19:in `_app_views_posts_show_html_erb__2061338178_2176886300_0'
+  app/controllers/posts_controller.rb:92:in `preview'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.8ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:06:53 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup..."}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 94ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:08:12 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup..."}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 149ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:08:38 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup..."}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 42ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:08:47 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup!"}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 123ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/0" for 127.0.0.1 at Wed Nov 03 15:08:56 +0530 2010
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mPost Load (9.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 0) LIMIT 1[0m
+Completed   in 24ms
+
+ActiveRecord::RecordNotFound (Couldn't find Post with ID=0):
+  app/controllers/posts_controller.rb:21:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.4ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at Wed Nov 03 15:10:05 +0530 2010
+  Processing by PostsController#update as HTML
+  Parameters: {"post"=>{"name"=>"f1", "title"=>"first post", "content"=>"lorem ipsup!"}, "authenticity_token"=>"QpWJQrqIw5MQxxTrjkOme0px3TewRAMon+BfucF9aS0=", "utf8"=>"✓", "id"=>"1", "preview"=>"Preview"}
+Rendered posts/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 41ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:22:41 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 13ms
+
+NameError (undefined local variable or method `previewable' for #<Class:0x103466cf8>):
+  app/models/post.rb:2
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:24:07 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 14ms
+
+NameError (undefined local variable or method `previewable' for #<Class:0x103466a50>):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:29:09 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 14ms
+
+NameError (undefined local variable or method `previewable' for #<Class:0x103466ac8>):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:31:27 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 12ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:42:40 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 14ms
+
+NameError (undefined local variable or method `previewable' for #<Class:0x103466a50>):
+  app/models/post.rb:3
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.6ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:44:16 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 8ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/models/post.rb:2
+  app/controllers/posts_controller.rb:42:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:55:30 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mPost Load (9.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Completed   in 198ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/controllers/posts_controller.rb:43:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:56:06 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 58ms
+
+NameError (uninitialized constant Preview::ClassMethods):
+  app/controllers/posts_controller.rb:43:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 15:57:37 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Completed   in 16ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (108.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:06:42 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 18ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:07:37 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Completed   in 17ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:43:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:08:39 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 19ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:43:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (97.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (107.8ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:08:47 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Completed   in 17ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:08:48 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 17ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:08:48 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+Completed   in 17ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (107.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:08:49 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 18ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:44:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:09:30 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+==========> within preview2
+Completed   in 58ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/controllers/posts_controller.rb:45:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:10:26 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Completed   in 59ms
+
+NameError (uninitialized constant Preview::Abc):
+  app/controllers/posts_controller.rb:43:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:10:38 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1[0m
+==========> within preview2
+Completed   in 16ms
+
+NoMethodError (undefined method `previewable' for Preview::ClassMethods:Module):
+  app/controllers/posts_controller.rb:45:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (104.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:11:29 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+==========> within preview2
+==========> within previewable
+Rendered posts/_form.html.erb (54.7ms)
+Rendered posts/edit.html.erb within layouts/application (74.5ms)
+Completed 200 OK in 134ms (Views: 119.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at Wed Nov 03 16:13:44 +0530 2010
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+==========> within previewable
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 1) LIMIT 1
+Rendered posts/_form.html.erb (23.0ms)
+Rendered posts/edit.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 100ms (Views: 39.4ms | ActiveRecord: 0.9ms)
