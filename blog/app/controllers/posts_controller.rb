@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  
   # GET /posts
   # GET /posts.xml
   def index
@@ -24,6 +26,10 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
+    #foo
+    #foo_present = self.methods.include?"foo"
+    #logger.info "=====> Foo: #{foo_present}"
+
     @post = Post.new
 
     respond_to do |format|
