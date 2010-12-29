@@ -46,4 +46,58 @@
       #return      
     end
 
+
+## 27dec2010
+
+basic setup:
+
+    rails new blog
+    cd blog; rm public/index.html
+    rake db:create
+	rails g scaffold post title:string content:text
+	rake db:migrate
+
+create the plugin
+
+	 rails g plugin preview --with-generator
+
+
+## 29dec2010
+
+Tried one approach and abandoned it. Done with the new approach. Commits:-
+
+0b6a6ed73fe135acd09263c34052033ece8fc861:
+
+	Working now.
+    Changed approach.
+    Now: Controller based approach
+    Earlier: Model based approach
+    
+    Check rants for todo
+
+6dc606eb30ad1236a7e1eb4e846af632dbc586fc
 	
+	WIp
+    
+    Current approach has to be abandoned.
+    Approach: the plugin functionality is triggered from the model. (model has the previe
+    Problem Observed: In any (web) request, controller is loaded before the models. So so
+    Concept: Trying to access controller from model is againsts MVC
+
+    
+## TODO-
+
+### v0.1
+- preview_tag or f.preview for views
+- preview actions as parameters
+- separate class to hold parameters and other data (model name, controller name)
+- patch url/path helpers to not raise exceptions when object id is nil
+
+### v0.2
+- validations for preview
+- handling paperclip attachments
+
+
+hello
+	
+
