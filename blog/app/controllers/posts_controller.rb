@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  previewable
   
   # GET /posts
   # GET /posts.xml
