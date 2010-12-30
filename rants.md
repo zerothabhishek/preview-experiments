@@ -88,9 +88,9 @@ Tried one approach and abandoned it. Done with the new approach. Commits:-
 ## TODO-
 
 ### v0.1
-- preview_tag or f.preview for views
+- Y preview_tag or f.preview for views
 - preview actions as parameters
-- separate class to hold parameters and other data (model name, controller name)
+- Y separate class to hold parameters and other data (model name, controller name)
 - patch url/path helpers to not raise exceptions when object id is nil
 
 ### v0.2

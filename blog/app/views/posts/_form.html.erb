@@ -21,6 +21,7 @@
   </div>
   <div class="actions">
     <%= f.submit %>
-	<%= f.submit 'Preview', :name=>"preview", :onclick=>"this.form.target='_blank';return true;" %>
+    <%= f.preview %>
+	<%#= f.submit 'Preview', :name=>"preview", :onclick=>"this.form.target='_blank';return true;" %>
   </div>
 <% end %>
