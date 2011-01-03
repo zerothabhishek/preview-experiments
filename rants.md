@@ -89,9 +89,12 @@ Tried one approach and abandoned it. Done with the new approach. Commits:-
 
 ### v0.1
 - Y preview_tag or f.preview for views
-- preview actions as parameters
+- Y preview actions as parameters
 - Y separate class to hold parameters and other data (model name, controller name)
-- patch url/path helpers to not raise exceptions when object id is nil
+- X patch url/path helpers to not raise exceptions when object id is nil
+- Y better Js to open preview in new page
+
+- write tests
 
 ### v0.2
 - validations for preview

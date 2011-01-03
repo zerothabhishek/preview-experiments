@@ -1,4 +1,5 @@
-class PreviewProcessor
+module Preview
+  class PreviewProcessor
     
     attr_accessor :controller, :modelKlass, :actions, :template
     
@@ -11,10 +12,11 @@ class PreviewProcessor
 
     def process request
       controllerInstance = request.env["action_controller.instance"]
-      data = request.parameters[@modelKlass.to_s.downcase]
+      params = controllerInstance.params
       
+      data = params[@modelKlass.to_s.downcase]      
       modelObj = @modelKlass.new(data)
-      modelObj.id = 0
+      modelObj.id = params[:id].to_i
       
       instanceVariable = ("@" + @modelKlass.to_s.downcase).to_sym
       controllerInstance.instance_variable_set(instanceVariable, modelObj)
@@ -32,4 +34,6 @@ class PreviewProcessor
       # controllerKlass = request.env["action_controller.instance"].class
       return controllerKlass
     end
+  
+  end
 end
