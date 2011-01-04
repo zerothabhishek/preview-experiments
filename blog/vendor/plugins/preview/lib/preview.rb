@@ -1,4 +1,4 @@
-require 'preview_processor'
+require 'preview/preview_processor'
 
 module Preview
   module Controllers

@@ -3,8 +3,8 @@ require 'test/unit'
 require 'active_support'
 require 'action_controller'
 
-ROOT = File.join(File.dirname(__FILE__), '..')
-$LOAD_PATH << File.join(ROOT, 'lib')
-$LOAD_PATH << File.join(ROOT, 'lib', 'preview')
+gem_root = File.join(File.dirname(__FILE__), '..')
+$LOAD_PATH << File.join(gem_root, 'lib')
+$LOAD_PATH << File.join(gem_root, 'lib', 'preview')
 
-require File.join(ROOT, 'lib', 'preview.rb')
+require File.join(gem_root, 'init.rb')
