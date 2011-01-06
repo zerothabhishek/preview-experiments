@@ -8,7 +8,8 @@ class PreviewTest < ActiveSupport::TestCase
   def setup
   end
 
-  test "the class method _previewable_ should be available to all controllers" do
+  # previewable
+  test "the class method _previewable_ should be available to all controllers in project using the gem" do
     assert ActionController::Base.respond_to?"previewable"
   end
 
@@ -34,6 +35,7 @@ class PreviewTest < ActiveSupport::TestCase
     TestController.previewable :actions=>:create
   end
   
+  # do_preview
   test "do_preview should not process preview if the preview parameter is not set" do
     TestController.any_instance.stubs(:params).returns({:preview => nil})
     Preview::PreviewProcessor.expects(:process).never
@@ -53,6 +55,19 @@ class PreviewTest < ActiveSupport::TestCase
     TestController.new.do_preview  
   end
   
+  # form helpers
+  test "a *preview* form builder method should be available for a project using the gem" do
+    assert ActionView::Helpers::FormBuilder.method_defined? :preview
+  end
+  
+  test "the *submit* form builder method should be aliased as *orig_submit* for a project using the gem" do
+    assert ActionView::Helpers::FormBuilder.method_defined? :orig_submit
+  end
+  
+  test "the *submit* form builder method should be modified so it sets an onclick JS option" do
+    assert true
+  end
+    
 =begin  
   test "previewable should include the Preview::Controllers::InstanceMethods module in the calling class" do
     # stub the other functionality
